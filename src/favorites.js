@@ -54,7 +54,8 @@ function favanimecard(anime) {
     savetoLocalstorage(favorite);
   });
 
-  favcard.addEventListener("click", (e) => {
+  const favcardimg = favcard.querySelector(".favimg-div");
+  favcardimg.addEventListener("click", (e) => {
     const card = e.target.closest(".favcard");
     if (!card) return;
     const id = card.dataset.id;

@@ -48,6 +48,7 @@ export async function Animecard() {
         <div class="favdiv-btn">
           <button class="fav-btn"><i class="fas fa-heart"></i>Add to Favorites</button>
         </div>
+        <div id="toast" class="toast hidden">Added to favorites</div>
         <div class="status-inputdiv">
           <label for="select">Trending Status</label>
           <select id="select">
@@ -92,6 +93,14 @@ export async function Animecard() {
     </div>
   `;
 
+  function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.remove("hidden");
+    setTimeout(() => {
+        toast.classList.add("hidden");
+    }, 2000);
+}
   const genre = document.querySelector(".genre");
   genre.innerHTML = "";
   animeid.genre.forEach((g) => {
@@ -112,8 +121,8 @@ export async function Animecard() {
       status: favstatus,
       img: animeid.img,
     };
-    console.log(favorite);
-    savetoLocalstorage(favorite);
+        savetoLocalstorage(favorite);
+        showToast("Added to favorites ✓");
   });
 
   return card;

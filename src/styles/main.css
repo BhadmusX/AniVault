@@ -93,8 +93,7 @@ header{
 }
 .app-name h1{
     color: #5A00C6;
-    font-size: clamp(2rem, 4vw, 3rem);
-    display: none;
+    font-size: clamp(1.6rem, 4vw, 3rem);
      font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -183,7 +182,7 @@ background-color: black;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background-color: #3F008E;
+    background-color:#3F008E;
 }
 div input{
     padding: 7px;
@@ -354,6 +353,25 @@ padding: 10px;
 color: white;
 border-radius: 7px;
 }
+.toast {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    background: #1D9E75;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
 .favdiv-btn{
     display: flex;
     justify-content: center;
@@ -498,12 +516,10 @@ width: 330px;
     padding: 5px;
     border-radius: 50%;
     backdrop-filter: blur(10px);
-    background-color: #1b1b1d42;
-    display: none;
+    background-color:#742ee430;
+    font-family: 'Inter';
 }
-.favimg-div:hover .del-btn{
-    display: block;
-}
+
 .favanime-name{
     padding: 5px;
     width: 150px;
