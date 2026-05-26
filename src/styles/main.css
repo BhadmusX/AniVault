@@ -118,16 +118,16 @@ header{
   font-style: normal;
   font-weight: 700;
 }
-.home-name > p {
+.home-name > h2 {
     padding: 10px;
     font-size: clamp(1.2rem, 3vw, 3rem);
     font-family: 'Inter';
-    font-weight: bold;
+    font-weight: 800;
     color: #5A00C6;
 }
 .home-name button {
     margin-top: 10px;
-    padding: 10px 50px;
+    padding: 13px 50px;
     font-size: clamp(0.5rem, 3vw, 3rem);
     font-family: 'Inter';
     font-weight: 600;
@@ -147,7 +147,7 @@ header{
     flex-direction: row;
     gap: 30px;
     padding: 15px 30px;
-    font-size: clamp(0.5rem, 3vw, 3rem);
+    font-size: clamp(1rem, 3vw, 3rem);
     font-family: 'Inter';
     font-weight: 600;
     background-color: #16063143;
