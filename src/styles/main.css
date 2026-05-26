@@ -129,7 +129,7 @@ header{
 .home-name button {
     margin-top: 10px;
     padding: 13px 50px;
-    font-size: clamp(0.5rem, 3vw, 3rem);
+    font-size: clamp(1rem, 3vw, 3rem);
     font-family: 'Inter';
     font-weight: 600;
     background-color: #732EE4;
