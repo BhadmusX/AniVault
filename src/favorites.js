@@ -3,7 +3,7 @@ import { loadfromlocalstorage } from "./utils/storage.js";
 import { getAnimeById } from "./utils/API.js";
 import { removefromlocal } from "./utils/storage.js";
 import { savetoLocalstorage } from "./utils/storage.js";
-
+import { getanimeEpisode } from "./utils/API.js";
 const favCont = document.querySelector(".fav-info");
 const favorites = loadfromlocalstorage();
 

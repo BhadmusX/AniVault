@@ -346,6 +346,31 @@ display: flex;
     font-weight: 700;
     color: #F7EDFF;
 }
+summary{
+    font-size: clamp(1.1rem, 3vw, 1.1rem);
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #A476FF;
+    padding: 10px 0px;
+}
+.episodes{
+     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #F7EDFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.epi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
 .fa-heart{
     color: white;
 }

@@ -60,7 +60,6 @@ export async function getAnimeById(id) {
   const anime = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
   if(!anime.ok) throw new Error(`Error: ${anime.status}`);
   const result = await anime.json();
-  console.log(result);
   const res = result.data;
   return {
     title: res.title,
@@ -85,4 +84,33 @@ export async function getAnimeById(id) {
 catch(err){
   throw err
 }
+}
+
+export async function getanimeEpisode(id) {
+    try {
+        let page = 1;
+        let allEpisodes = [];
+        let hasNextPage = true;
+
+        while (hasNextPage) {
+            const response = await fetch(`https://api.jikan.moe/v4/anime/${id}/episodes?page=${page}`);
+            await new Promise(resolve => setTimeout(resolve, 400)); 
+            if (!response.ok) throw new Error(`Error: ${response.status}`);
+            const results = await response.json();
+
+            const episodes = results.data.map(episode => ({
+                id: episode.mal_id,
+                title: episode.title,
+                titleJap: episode.title_romanji ?? episode.title,
+            }));
+
+            allEpisodes = [...allEpisodes, ...episodes];
+            hasNextPage = results.pagination.has_next_page;
+            page++;
+        }
+
+        return allEpisodes;
+    } catch(err) {
+        throw err;
+    }
 }

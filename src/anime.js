@@ -1,5 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { getAnimeById } from "./utils/API.js";
+import { getanimeEpisode } from "./utils/API.js";
 import "./styles/main.css";
 import { savetoLocalstorage } from "./utils/storage.js";
 
@@ -26,7 +27,8 @@ export async function Animecard() {
     }
     return num;
   }
-
+ const epi =  await getanimeEpisode(animeid.id);
+ console.log(epi);
   card.innerHTML = `
     <div class="animeimg-cont">
       <img src="${animeid.img}" alt="${animeid.title}">
@@ -43,6 +45,12 @@ export async function Animecard() {
         <h3>Synopsis</h3>
         <p>${animeid.synopsis}</p>
       </div>
+
+      <details class="episodes-div">
+      <h3>Episodes</h3>
+        <summary>${epi.length} Episodes</summary>
+      <div class="episodes"></div>
+      </details>
 
       <div class="favorite-div">
         <div class="favdiv-btn">
@@ -92,6 +100,28 @@ export async function Animecard() {
       </div>
     </div>
   `;
+
+  const episodes = card.querySelector(".episodes");
+  function createEpisodeCard(anime){
+    const div = document.createElement("div");
+    div.classList.add("epi")
+    episodes.appendChild(div);
+    div.innerHTML= `
+    <h1 class="episode-num">${anime.id}</h1>
+    <div class="title">
+    <h3 class="anime-title">${anime.title}</h3>
+    <p class="anime-titlejap">${anime.titlejap}</p>
+    </div>
+    <input type="checkbox"/>
+    </div>
+    `;
+  }
+
+ 
+  epi.map(anime => {
+     createEpisodeCard(anime);
+   })
+
 
   function showToast(message) {
     const toast = document.getElementById("toast");
