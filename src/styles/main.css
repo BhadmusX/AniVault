@@ -173,7 +173,7 @@ header{
 .home-name button {
     margin-top: 10px;
     padding: 13px 70px;
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: clamp(0.8rem, 3vw, 3rem);
     font-family: 'Inter';
     font-weight: 600;
     background-color: #732EE4;
@@ -217,13 +217,13 @@ header{
 .how-text h3{
 font-family: var(--font-family);
 color: var(--lighter-purple);
-font-size: clamp(1.1rem, 3vw, 1.2rem);
+font-size: clamp(1rem, 3vw, 1.2rem);
 font-weight: 400;
 }
 .how-text > p {
     color: white;
     font-family: var(--font-family);
-    font-size: clamp(1.2rem, 3vw, 1.2rem);
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
 font-weight: 700;
 }
 .how-text > p >span{
