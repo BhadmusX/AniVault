@@ -137,7 +137,8 @@ header{
   font-weight: 700;;
   border: 1px solid var(--glow-color-purple);
   border-radius: 25px;
-  padding: 10px 30px;
+  width: 300px;
+  padding: 10px 10px;
   font-size: clamp(1rem, 3vw, 1.3rem);
 }
 .home-name{
@@ -158,22 +159,26 @@ header{
   font-style: normal;
   font-weight: 700;
 }
-.home-name > h2 {
-    padding: 10px;
-    font-size: clamp(2rem, 3vw, 3rem);
+.app-hint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+      padding: 10px;
+    font-size: clamp(1.3rem, 3vw, 2rem);
     font-family: 'Inter';
     font-weight: 800;
     color: white;
-    padding-top: 20px;
-    text-align: center;
+
 }
-.home-name >h2 >span{
+.discover{
     color: var(--deep-color-purple);
 }
 .home-name button {
     margin-top: 10px;
     padding: 13px 70px;
-    font-size: clamp(0.8rem, 3vw, 3rem);
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
     font-family: 'Inter';
     font-weight: 600;
     background-color: #732EE4;
@@ -195,7 +200,7 @@ header{
     flex-direction: row;
     gap: 30px;
     padding: 15px 100px;
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
     font-family: 'Inter';
     font-weight: 600;
     background-color: var(--bg-surface);
@@ -324,7 +329,7 @@ footer{
 /*Browse style*/
 .browse-container{
     min-height: 100vh;
-background-color: black;
+background-color: var(--bg-base);
 }
 .err-div{
     display: flex;
@@ -351,8 +356,15 @@ div input{
     padding: 7px;
     border-radius: 7px;
     border: none;
-    background-color: #25005A;
+    background-color: var(--bg-base);
     color: white;
+}
+.input-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
 }
 div input::placeholder{
     color: #F5EEFF;
@@ -364,7 +376,7 @@ div input::placeholder{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
+    gap: 5px;
 }
 .hamburger{
      display: flex;
@@ -784,5 +796,40 @@ width: 330px;
 
     .nav-links a {
       color: #F5EEFF;
+    }
+    .home-name{
+        max-width: 1200px;
+        width: 100%;
+         margin: 0 auto;
+         margin-top: 10vh;
+    }
+    .home-text{
+        width: 500px;
+        padding: 10px 10px;
+        text-align: center;
+    }
+    .app-hint{
+         display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 50px 0px 10px 0px;
+    }
+     .footer-app-hint{
+         display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    } 
+    .how-cards{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding-top: 10px;
+    }
+    /*browse*/
+    div input{
+        padding: 10px;
+        width: 500px;
     }
 }
