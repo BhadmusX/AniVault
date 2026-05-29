@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css">
     <title>AniVault</title>
 </head>
 <body>
     <div class="home-container">
-    <header>
+        <header class="home-header">
+        <div class="app-name">
+        <h1>Ani<span class="span-apname">Vault</span></h1>
+        </div>
         <div class="right-header">
-            <div class="searchbutton">
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            </div>
-            <div class="user"></div>
+            <ul class ="nav-links" id ="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+            </ul>
         </div>
     </header>
     <div class="home-name">
-        <h1>AniVault</h1>
-        <h2>Track. Discover. Obesse.</h2>
+        <div class="home-text">YOUR PERSONAL ANIME DATABASE</div>
+        <h2>Track. <br><span>Discover.</span><br> Obesse.</h2>
         <button class="browse-btn">START BROWSING<span>→</span></button>
         <div class="app-info">
             <div class="titles">
@@ -29,7 +40,52 @@
                 <p>Fans</p>
             </div>
         </div>
+        <P class="scroll">SCROLL</P>
+        <div class="how-it-works">
+            <div class="how-text">
+                <h3>HOW IT WORKS</h3>
+                <P>From zero to your personal <span class="howitworks-span">anime vault</span> in three steps</P>
+            </div>
+            <div class="how-cards">
+
+            <div class="find">
+                <h1>&mdash; 01</h1>
+                <div class="find-img">
+                    <i class="ti ti-search"></i>
+                </div>
+                <h2>Find something to watch</h2>
+                <p>Search or browse 15,000+ anime titles.</p>
+            </div>
+
+            <div class="details">
+                <h1>&mdash; 02</h1>
+                <div class="details-img">
+                    <i class="ti ti-list-details"></i>
+                </div>
+                <h2>See everything about it</h2>
+                <p>Full synopsis, score, genres, and a episode list. — every detail you need before you commit to watching.</p>
+            </div>
+
+        <div class="addtovault">
+            <h1>&mdash; 03</h1>
+            <div class="addtovault-img">
+                <i class="ti ti-bookmark"></i>
+            </div>
+            <h2>Add it to your vault</h2>
+            <p>One tap saves any anime to your list. set a status -plan to Watch, watching, Completed, or Dropped</p>
+        </div>
+        </div>
     </div>
+    </div>
+    <footer> 
+        <div class="footer-appname">
+             <h1>Ani<span class="span-apname">Vault</span></h1>
+            <h2>Track. <br><span>Discover.</span><br> Obesse.</h2> 
+        </div>
+        <div class="sponsors">
+            Powered by Jikan API
+        </div>
+    </footer>
     </div>
 </body>
 </html>

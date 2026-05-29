@@ -100,8 +100,7 @@ export async function getanimeEpisode(id) {
 
             const episodes = results.data.map(episode => ({
                 id: episode.mal_id,
-                title: episode.title,
-                titleJap: episode.title_romanji ?? episode.title,
+                title: episode.title ?? episode.title_romanji,
             }));
 
             allEpisodes = [...allEpisodes, ...episodes];

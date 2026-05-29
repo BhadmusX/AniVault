@@ -110,7 +110,6 @@ export async function Animecard() {
     <h1 class="episode-num">${anime.id}</h1>
     <div class="title">
     <h3 class="anime-title">${anime.title}</h3>
-    <p class="anime-titlejap">${anime.titlejap}</p>
     </div>
     <input type="checkbox"/>
     </div>
