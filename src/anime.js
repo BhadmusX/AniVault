@@ -33,21 +33,44 @@ export async function Animecard() {
     <div class="animeimg-cont">
       <img src="${animeid.img}" alt="${animeid.title}">
     </div>
+  
+    <div class="anime-infocard">
+
     <div class="animecard-info">
       <h3 class="title-eng">${animeid.titleEng}</h3>
-      <div class="card-meta">
-        <span>🎬 ${animeid.episode} episodes</span>
-        <span>⏱ ${animeid.duration}</span>
+      <div class="genre"></div>
       </div>
-    </div>
-    <div class="anime-infocard">
+
+      <div class="anime-details">
+      <div class="episode">
+      <div class="episode-icon"><i class="fas fa-film"></i></div>
+      <h1 class="animedetails-h1">Episodes</h1>
+      <h3 class="animedetails-h3">${animeid.episode}</h3>
+      </div>
+      <div class="duration">
+      <div class="duration-icon"><i class="fas fa-clock"></i></div>
+      <h1 class="animedetails-h1">Duration</h1>
+      <h3 class="animedetails-h3">${animeid.duration}</h3>
+      </div>
+      <div class="year">
+      <div class="year-icon"><i class="fas fa-calendar-alt"></i></div>
+      <h1 class="animedetails-h1">Calendar</h1>
+      <h3 class="animedetails-h3">${animeid.year}</h3>
+      </div>
+      <div class="type">
+      <div class="type-icon"><i class="fas fa-tv"></i></div>
+      <h1 class="animedetails-h1">Type</h1>
+      <h3 class="animedetails-h3">${animeid.type}</h3>
+      </div>
+
+      </div>
+
       <div class="synopsis">
         <h3>Synopsis</h3>
         <p>${animeid.synopsis}</p>
       </div>
 
       <details class="episodes-div">
-      <h3>Episodes</h3>
         <summary>${epi.length} Episodes</summary>
       <div class="episodes"></div>
       </details>
@@ -85,7 +108,6 @@ export async function Animecard() {
         </div>
       </div>
 
-      <div class="genre"></div>
 
       <div class="rank-div">
         <div class="rank">
@@ -107,11 +129,10 @@ export async function Animecard() {
     div.classList.add("epi")
     episodes.appendChild(div);
     div.innerHTML= `
-    <h1 class="episode-num">${anime.id}</h1>
+    <h1 class="episode-num">${anime.id}<h1>
     <div class="title">
     <h3 class="anime-title">${anime.title}</h3>
     </div>
-    <input type="checkbox"/>
     </div>
     `;
   }
@@ -149,6 +170,8 @@ export async function Animecard() {
       title: animeid.title,
       status: favstatus,
       img: animeid.img,
+      type: animeid.type,
+      episode: animeid.episode,
     };
         savetoLocalstorage(favorite);
         showToast("Added to favorites ✓");

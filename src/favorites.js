@@ -20,10 +20,15 @@ function favanimecard(anime) {
     <img src="${anime.img}" alt="${anime.title}"></img>
     </div>
 
+    <div class="favanime-info">
     <div class="favanime-name">
     <h1>${anime.title}</h1>
+    <div class="epi-type-div">
+    <div class="fav-episode"><h1>${anime.episode}</h1></div>
+    <div class="fav-type"><h1>${anime.type}</h1></div>
     </div>
-    <divclass="favselect-div">
+    </div>
+    <div class="favselect-div">
     <select id="select">
             <option value="watching" ${anime.status === "watching" ? "selected" : ""}>Watching</option>
             <option value="completed"  ${anime.status === "completed" ? "selected" : ""}>Completed</option>
@@ -31,6 +36,7 @@ function favanimecard(anime) {
             <option value="onHold" ${anime.status === "onHold" ? "selected" : ""}>On Hold</option>
             <option value="dropped" ${anime.status === "dropped" ? "selected" : ""}>Dropped</option>
           </select>
+    </div>
     </div>
 
     </div>
@@ -50,6 +56,8 @@ function favanimecard(anime) {
       title: anime.title,
       status: select.value,
       img: anime.img,
+      type: anime.type,
+      episode: anime.episode,
     };
     savetoLocalstorage(favorite);
   });
@@ -62,11 +70,27 @@ function favanimecard(anime) {
     window.location.href = `anime.html?id=${id}`;
   });
 }
-const fav = favorites.forEach((anime) => {
-  const id = anime.id;
-  const favanime = getAnimeById(id);
-  favanimecard(anime);
-});
+
+function renderFavorites(list) {
+  favCont.innerHTML = "";
+  list.forEach((anime) => favanimecard(anime));
+}
+const filter = document.querySelector("#filter");
+  if (filter) {
+  filter.addEventListener("change", () => {
+    const value = filter.value;
+    if(value === "all"){
+      renderFavorites(favorites);
+    }
+    else{
+    const filtered = favorites.filter((anime) => anime.status === value);
+    renderFavorites(filtered);
+    }
+  });
+}
+
+renderFavorites(favorites);
+
 
 /**Hamburger */
 const hamburger = document.querySelector(".hamburger");

@@ -36,17 +36,17 @@ export async function searchAnime(search) {
     console.log(results);
     const res = results.data.map((anime) => {
       return {
-        title: anime.title,
-        titleEng: anime.title_english,
+        title: anime.title || "N/A",
+        titleEng: anime.title_english || "N/A",
         img: anime.images.jpg.image_url.replace(
           "https://myanimelist.net",
           "https://cdn.myanimelist.net",
         ),
-        episode: anime.episodes,
-        duration: anime.duration,
-        id: anime.mal_id,
+        episode: anime.episodes || "N/A",
+        duration: anime.duration || "N/A",
+        id: anime.mal_id || "N/A",
         year: anime.year,
-        genre: anime.genres,
+        genre: anime.genres || "N/A",
       };
     });
     return res;
@@ -68,17 +68,18 @@ export async function getAnimeById(id) {
       "https://myanimelist.net",
       "https://cdn.myanimelist.net",
     ),
-    episode: res.episodes,
-    duration: res.duration,
-    id: res.mal_id,
-    year: res.year,
-    genre: res.genres,
-    synopsis: res.synopsis,
-    rank: res.rank,
-    season: res.season,
-    status: res.status,
-    type: res.type,
-    members: res.members,
+    episode: res.episodes || "N/A",
+    duration: res.duration || "N/A",
+    id: res.mal_id || "N/A",
+    year: res.year || "N/A",
+    genre: res.genres || "N/A",
+    synopsis: res.synopsis || "N/A",
+    rank: res.rank || "N/A",
+    season: res.season || "N/A",
+    status: res.status || "N/A",
+    type: res.type || "N/A",
+    members: res.members || "N/A",
+    year: res.year || "N/A",
   };
 }
 catch(err){
@@ -97,6 +98,7 @@ export async function getanimeEpisode(id) {
             await new Promise(resolve => setTimeout(resolve, 400)); 
             if (!response.ok) throw new Error(`Error: ${response.status}`);
             const results = await response.json();
+            console.log(results)
 
             const episodes = results.data.map(episode => ({
                 id: episode.mal_id,

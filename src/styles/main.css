@@ -25,7 +25,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: var(--bg-base);
 }
 
 .span-apname{
@@ -361,7 +361,7 @@ div input{
 }
 .input-div{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  
     align-items: center;
     flex-direction: row;
 
@@ -376,7 +376,7 @@ div input::placeholder{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 5px;
+    gap: 5 px;
 }
 .hamburger{
      display: flex;
@@ -446,7 +446,7 @@ div input::placeholder{
 /*Anime style*/
 .anime-cont{
      min-height: 100vh;
-background-color: black;
+background-color: var(--bg-base);
 }
 .anime-header{
 display: flex;
@@ -472,28 +472,68 @@ display: flex;
     display: block;
 }
 .animecard-info {
-    position: absolute;
-    height: 80px;
-    width: 300px;
-    top: 50%;
-    left: 25%;
-    text-align: right;
-    padding: 10px;
     box-sizing: border-box;
-     color: #fff;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     font-family: 'Inter';
     font-weight: 700;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.title-eng{
+    font-size: clamp(1.5rem, 3vw, 1.1rem);
 }
 .anime-infocard{
     padding: 10px;
     padding-bottom: 100px;
+    background-color: var(--bg-base);
+}
+.genpara{
+    background-color: var(--dark-purple);
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+     font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+    font-family: 'Inter';
+    font-weight: 400;
+    color: var(--glow-color-purple);  
+}
+.anime-details{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+}
+.episode, .duration, .year, .type{
+    background-color: var(--bg-surface);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    max-height: 80px;
+    width: 150px;
+    border-radius: 5px;
+
+}
+.fa-film, .fa-clock, .fa-calendar-alt, .fa-tv{
+    color: var(--deep-color-purple);
+}
+.animedetails-h1{
+ font-size: clamp(0.9rem, 2.5vw, 0.8rem);
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #F7EDFF;
+}
+.animedetails-h3{
+    font-size: clamp(1.1rem, 2.5vw, 0.8rem);
+    font-family: 'Inter';
+    font-weight: 700;
+    color: #F7EDFF; 
 }
 .synopsis{
     color: white;
-    background-color: black;
+    background-color: var(--bg-base);
     margin-top: 30px;
 }
 .synopsis h3{
@@ -524,6 +564,13 @@ summary{
     flex-direction: column;
     gap: 20px;
 }
+.epi{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
 .episode-num{
   font-size: clamp(1.6rem, 3vw, 1.6rem);
     font-family: 'Inter';
@@ -536,41 +583,8 @@ summary{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 200px;
-}
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #555;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-}
-
-
-input[type="checkbox"]:checked {
-    background-color:#5A00C6;
-    border-color:#732EE4;
-}
-
-input[type="checkbox"]:checked::after {
-    content: "✓";
-    position: absolute;
-    color: white;
-    font-size: 14px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.epi{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
 }
 .fa-heart{
     color: white;
@@ -665,17 +679,6 @@ width: 330px;
     margin-top: 20px;
     gap: 5px;
 }
-.genpara{
-    background-color: #313032;
-    color: white;
-    padding: 5px;
-    border-radius: 25px;
-     font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-    font-family: 'Inter';
-    font-weight: 400;
-    color: white;  
-}
-
 .rank-div{
     display: flex;
     flex-direction: row;
@@ -709,6 +712,37 @@ width: 330px;
     text-align: right;
 }
 /*Favorite*/
+.fav-cont{
+    background-color: var(--bg-base);
+}
+.fav-hometext > h1{
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 1.1rem);
+    font-family: 'Inter';
+    padding: 10px;
+}
+.fav-hometext > p{
+    color: white;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-family: 'Inter';
+    padding: 5px;
+    margin: 0;
+}
+.filter-div{
+    padding: 10px;
+}
+.filter-div label{
+    color: white;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-family: 'Inter';
+}
+#filter{
+    width: 250px;
+    padding: 5px;
+    background-color: var(--dark-purple);
+    border: none;
+    color: var(--glow-color-purple);
+}
 .fav-header{
      display: flex;
     justify-content: space-between;
@@ -717,22 +751,27 @@ width: 330px;
 }
 
 .fav-info{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 16px;
-    padding: 16px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    gap: 20px;
+}
+.main-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--bg-surface);
+    border-radius: 7px;
+    height: 150px;
+    width: 350px;
 }
 .favimg-div{
-    object-position: center;
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px;
-    height: 290px;
-    position: relative;
-    background: transparent;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.favimg-div img{
+    height: 150px;
+    width: 100px;
 }
 .del-btn{
     position: absolute;
@@ -747,10 +786,33 @@ width: 330px;
     background-color:#742ee430;
     font-family: 'Inter';
 }
-
+.favanime-info{
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
 .favanime-name{
     padding: 5px;
     width: 150px;
+}
+.epi-type-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    padding-top: 10px;
+}
+.fav-episode, .fav-type{
+    background-color: var(--bg-card-hover);
+    padding: 2px;
+    width: fit-content;
+    border-radius: 3px;
 }
 #select{
     padding: 5px 40px;
@@ -832,4 +894,28 @@ width: 330px;
         padding: 10px;
         width: 500px;
     }
+    /*favorite*/
+    .fav-info{
+        padding: 0 100px 0 100px ;
+    }
+    .fav-inner-head{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px 90px 20px 90px;
+    }
+    #filter{
+    width: 350px;
+}
+.fav-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.main-card{
+     height: 150px;
+    width: 30px;
+}
+
 }

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorite</title>
 </head>
-<body>
+<body class="fav-body">
       <div class="fav-cont">
     <header class="fav-header">
         <div class="app-name">
@@ -25,6 +25,23 @@
             </ul>
         </div>
     </header>
+    <div class="fav-inner-head">
+    <div class="fav-hometext">
+    <h1>My Favorites</h1>
+    <p>Manage your curated sanctuary of stories</p>
+    </div>
+    <div class="filter-div">
+        <label for="filter">Sort By</label>
+        <select name="filter" id="filter">
+            <option value="all">All</option>
+            <option value="watching">Watching</option>
+            <option value="completed">Completed</option>
+            <option value="on-hold">On Hold</option>
+            <option value="watchlist">Watchlist</option>
+            <option value="dropped">Dropped</option>
+        </select>
+    </div>
+    </div>
     <div class="fav-info"></div>
 </div>
 </body>
